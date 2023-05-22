@@ -1,14 +1,12 @@
 import React from "react";
 import GlobalStyles from "./assets/components/styles/GlobalStyles";
-import Dashboard from "./pages/Dashboard/Dashboard";
-import Aside from "./pages/Dashboard/Aside";
-import Content from "./pages/Dashboard/Content";
+import Layout from "./assets/components/Tools/Layout/layout";
 
 const App: React.FC = () => {
   return (
     <>
       <GlobalStyles />
-      <Dashboard />
+      <Layout />
     </>
   );
 };
