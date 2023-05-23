@@ -1,11 +1,11 @@
 import React from "react";
-import { Container } from "./Container"; 
+import { StyleConfig } from "./StyleConfig"; 
 
 const Aside: React.FC = () => {
     return (
-        <Container>
+        <StyleConfig>
             <h1>Aside</h1>
-        </Container>
+        </StyleConfig>
     )
 }
 
