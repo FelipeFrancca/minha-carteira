@@ -6,6 +6,7 @@ import {
     Welcome,
     UserName
 } from "./StyleConfig"; 
+import ThemeSwitch from "../../components/themeSwitch";
 
 const Mainheader: React.FC = () => {
     const emoji = useMemo(() => {
@@ -15,8 +16,7 @@ const Mainheader: React.FC = () => {
 
     return (
         <Container>
-            <h1>Switch</h1>
-
+            <ThemeSwitch/>
             <Profile>
                 <Welcome>Olá, {emoji}</Welcome>
                 <UserName>Felipe França</UserName>
