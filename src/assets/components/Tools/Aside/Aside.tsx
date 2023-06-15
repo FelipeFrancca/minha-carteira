@@ -1,5 +1,6 @@
 import React from "react";
 import Logo from "../../../img/logo.png";
+
 import {
     StyleConfig,
     Header,
@@ -7,7 +8,14 @@ import {
     Title,
     Menu,
     MenuItemLink
-} from "./StyleConfig"; 
+} from "./StyleConfig";
+
+import {
+    Widgets,
+    KeyboardArrowUp,
+    KeyboardArrowDown,
+    Logout
+} from '@mui/icons-material/';
 
 const Aside: React.FC = () => {
     return (
@@ -19,7 +27,20 @@ const Aside: React.FC = () => {
 
             <Menu>
                 <MenuItemLink href="#">
-                    Dashboard
+                    <Widgets/>
+                        Dashboard
+                </MenuItemLink>
+                <MenuItemLink href="#">
+                    <KeyboardArrowUp/>
+                        Movimentações de Entradas
+                </MenuItemLink>
+                <MenuItemLink href="#">
+                    <KeyboardArrowDown/>
+                        Movimentações de Saídas
+                </MenuItemLink>
+                <MenuItemLink href="#">
+                    <Logout/>
+                        Sair
                 </MenuItemLink>
             </Menu>
         </StyleConfig>
