@@ -1,12 +1,16 @@
-import React from "react";
-import { StyleConfig } from "./StyleConfig"; 
+import React, { ReactNode } from "react";
+import { StyleConfig } from "./StyleConfig";
 
-const Content: React.FC = () => {
-    return (
-        <StyleConfig>
-            <h1>Content</h1>
-        </StyleConfig>
-    )
+interface ContentProps {
+  children: ReactNode;
+}
+
+const Content: React.FC<ContentProps> = ({ children }) => {
+  return (
+    <StyleConfig>
+      {children}
+    </StyleConfig>
+  );
 }
 
 export default Content;

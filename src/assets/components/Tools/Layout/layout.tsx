@@ -1,16 +1,22 @@
-import React from "react";
+import React, { ReactNode } from "react";
 import { Gridlayout } from "./StyleConfig";
 
 import Header from "../Mainheader/mainheader";
 import Aside from "../Aside/Aside";
 import Content from "../Content/content";
 
-const Layout: React.FC = () => {
+interface LayoutProps {
+  children: ReactNode;
+}
+
+const Layout: React.FC<LayoutProps> = ({ children }) => {
   return (
     <Gridlayout>
       <Header />
-      <Aside/>
-      <Content />
+      <Aside />
+      <Content>
+        {children}
+      </Content>
     </Gridlayout>
   );
 };
