@@ -3,7 +3,7 @@ import { ThemeProvider } from "styled-components";
 import GlobalStyles from "./assets/components/styles/GlobalStyles";
 
 import Layout from "./assets/components/Tools/Layout/layout";
-import Dashboard from "./pages/Dashboard/Dashboard";
+//import Dashboard from "./pages/Dashboard/Dashboard";
 import List from "./pages/List/List";
 import dark from "./assets/components/styles/themes/dark"
 
@@ -12,7 +12,7 @@ const App: React.FC = () => {
     <ThemeProvider theme={dark}>
       <GlobalStyles />
       <Layout>
-      <Dashboard/>
+      <List/>
       </Layout>
     </ThemeProvider>
   );
