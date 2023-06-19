@@ -1,11 +1,19 @@
-import React from "react";
+import React, {useMemo} from "react";
 import { StyleConfig, Content, Filters } from './StyleConfig';
 
 import SelectInput from "../../assets/components/components/SlectInput/SelectInput";
-import CardHistoryFinancener from "../../assets/components/components/CardHistoryFinance/CardHistoryFinance";
+import CardHistoryFinancene from "../../assets/components/components/CardHistoryFinance/CardHistoryFinance";
 import ContentHeader from "../../assets/components/Tools/ContentHeader/contentHeader";
 
-const List: React.FC = () => {
+interface IRouteParams {
+    type: string;
+}
+
+const List: React.FC<IRouteParams> = ({ type }) => {
+
+    const title = useMemo(() => {
+        return type === 'entry-moviment' ? 'Movimentações de Entradas' : 'Movimentações de Saídas'
+    }, [type]);
 
     const mounths = [
         {value: 1, label: 'Janeiro'},
@@ -37,7 +45,7 @@ const List: React.FC = () => {
 
     return (
         <StyleConfig>
-            <ContentHeader title="Movimentações de Saídas" lineColor="#ff0000">
+            <ContentHeader title={title} lineColor="#ff0000">
                 <SelectInput options={mounths}/>
                 <SelectInput options={yaers}/>
             </ContentHeader>
@@ -52,7 +60,7 @@ const List: React.FC = () => {
             </Filters>
 
             <Content>
-                <CardHistoryFinancener tagColor="#B70404" title="Conta de Luz" subtitle="06/07/23" amount="R$: 750,00"/>
+                <CardHistoryFinancene tagColor="#B70404" title="Conta de Luz" subtitle="06/07/23" amount="R$: 750,00"/>
             </Content>
         </StyleConfig>
     );
