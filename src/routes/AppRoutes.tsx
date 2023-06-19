@@ -9,7 +9,7 @@ function AppRoutes() {
     <Layout>
       <Routes>
         <Route path="/dashboard" element={<Dashboard />} />
-        <Route path="/list:type" element={<List type="" />} />
+        <Route path="/list/:type" element={<List />} />
       </Routes>
     </Layout>
   );

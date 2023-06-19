@@ -1,19 +1,20 @@
 import React, {useMemo} from "react";
+import { useParams } from 'react-router-dom';
 import { StyleConfig, Content, Filters } from './StyleConfig';
 
 import SelectInput from "../../assets/components/components/SlectInput/SelectInput";
 import CardHistoryFinancene from "../../assets/components/components/CardHistoryFinance/CardHistoryFinance";
 import ContentHeader from "../../assets/components/Tools/ContentHeader/contentHeader";
 
-interface IRouteParams {
-    type: string;
-}
+export const List: React.FC = () => {
 
-const List: React.FC<IRouteParams> = ({ type }) => {
+    const { type } = useParams();
 
     const title = useMemo(() => {
-        return type === 'entry-moviment' ? 'Movimentações de Entradas' : 'Movimentações de Saídas'
-    }, [type]);
+        return type === 'entry-moviment'
+          ? { title: 'Movimentações de Entradas', lineColor: '#187D5F' }
+          : { title: 'Movimentações de Saídas', lineColor: '#CC2A2C' };
+      }, [type]);
 
     const mounths = [
         {value: 1, label: 'Janeiro'},
@@ -45,7 +46,7 @@ const List: React.FC<IRouteParams> = ({ type }) => {
 
     return (
         <StyleConfig>
-            <ContentHeader title={title} lineColor="#ff0000">
+            <ContentHeader title={title.title} lineColor={title.lineColor}>
                 <SelectInput options={mounths}/>
                 <SelectInput options={yaers}/>
             </ContentHeader>
