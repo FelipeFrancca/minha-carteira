@@ -30,11 +30,11 @@ const Aside: React.FC = () => {
                     <Widgets/>
                         Dashboard
                 </MenuItemLink>
-                <MenuItemLink href="/entry-moviment">
+                <MenuItemLink href="/list/entry-moviment">
                     <KeyboardArrowUp/>
                         Movimentações de Entradas
                 </MenuItemLink>
-                <MenuItemLink href="/exit-moviment">
+                <MenuItemLink href="/list/exit-moviment">
                     <KeyboardArrowDown/>
                         Movimentações de Saídas
                 </MenuItemLink>

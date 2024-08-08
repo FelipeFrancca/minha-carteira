@@ -9,14 +9,16 @@ export const StyleConfig = styled.div`
   overflow-y: scroll;
 
   ::-webkit-scrollbar {
-    width: 10px;
-  }
-  ::-webkit-scrollbar-thumb {
-    background-color: ${props => props.theme.palette.secondary};
-    border-radius: 10px;
-  }
-  ::-webkit-scrollbar-track {
-    background-color: ${props => props.theme.palette.tertiary};
-  }
+  width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 50px;
+  background-color: ${props => props.theme.palette.primary};
+}
+
+::-webkit-scrollbar-track {
+  background-color: ${props => props.theme.palette.tertiary};
+}
 
 `;

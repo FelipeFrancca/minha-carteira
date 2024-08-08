@@ -1,7 +1,7 @@
 import React from "react";
 
 
-import SelectInput from "../../assets/components/components/SlectInput/SelectInput";
+import SelectInput from "../../assets/components/components/SelectInput/SelectInput";
 import ContentHeader from "../../assets/components/Tools/ContentHeader/contentHeader";
 import { StyleConfig } from './StyleConfig';
 

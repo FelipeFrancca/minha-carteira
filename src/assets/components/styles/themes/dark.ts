@@ -1,4 +1,4 @@
-export default {
+const DarkTheme = {
     title: 'dark',
 
     palette: {
@@ -16,3 +16,5 @@ export default {
         warning: '#FFE569',
     },
 };
+
+export default DarkTheme;

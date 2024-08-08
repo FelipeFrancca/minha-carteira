@@ -1,12 +1,40 @@
-import React, {useMemo} from "react";
+import React, {useMemo, useState, useEffect} from "react";
 import { useParams } from 'react-router-dom';
 import { StyleConfig, Content, Filters } from './StyleConfig';
 
-import SelectInput from "../../assets/components/components/SlectInput/SelectInput";
+import SelectInput from "../../assets/components/components/SelectInput/SelectInput";
 import CardHistoryFinancene from "../../assets/components/components/CardHistoryFinance/CardHistoryFinance";
 import ContentHeader from "../../assets/components/Tools/ContentHeader/contentHeader";
 
+import Expenses from "../../repositories/expenses";
+import Gains from "../../repositories/gains";
+import { Description } from "@mui/icons-material";
+
+interface IData {
+    description: string;
+    amountFormatted: string;
+    frequency: string;
+    dataFormatted: string;
+    tagColor: string;
+}
+
 export const List: React.FC = () => {
+    const [data, setData] = useState<IData[]>([]);
+
+    useEffect(() => {
+        const response = listData.map(item => {
+            return {
+                description: item.description,
+                amountFormatted: item.amount,
+                frequency: item.frequency,
+                dataFormatted: item.date,
+                tagColor: "#ff3500"
+}
+            }
+        })
+
+        setData(response);
+    },[]);
 
     const { type } = useParams();
 
@@ -15,6 +43,10 @@ export const List: React.FC = () => {
           ? { title: 'Movimentações de Entradas', lineColor: '#187D5F' }
           : { title: 'Movimentações de Saídas', lineColor: '#CC2A2C' };
       }, [type]);
+
+      const listData = useMemo(() => {
+        return type === 'entry-moviment' ? Gains : Expenses;
+      },[type]);
 
     const mounths = [
         {value: 1, label: 'Janeiro'},
@@ -61,6 +93,43 @@ export const List: React.FC = () => {
             </Filters>
 
             <Content>
+                <CardHistoryFinancene tagColor="#B70404" title="Conta de Luz" subtitle="06/07/23" amount="R$: 750,00"/>
+                <CardHistoryFinancene tagColor="#B70404" title="Conta de Luz" subtitle="06/07/23" amount="R$: 750,00"/>
+                <CardHistoryFinancene tagColor="#B70404" title="Conta de Luz" subtitle="06/07/23" amount="R$: 750,00"/>
+                <CardHistoryFinancene tagColor="#B70404" title="Conta de Luz" subtitle="06/07/23" amount="R$: 750,00"/>
+                <CardHistoryFinancene tagColor="#B70404" title="Conta de Luz" subtitle="06/07/23" amount="R$: 750,00"/>
+                <CardHistoryFinancene tagColor="#B70404" title="Conta de Luz" subtitle="06/07/23" amount="R$: 750,00"/>
+                <CardHistoryFinancene tagColor="#B70404" title="Conta de Luz" subtitle="06/07/23" amount="R$: 750,00"/>
+                <CardHistoryFinancene tagColor="#B70404" title="Conta de Luz" subtitle="06/07/23" amount="R$: 750,00"/>
+                <CardHistoryFinancene tagColor="#B70404" title="Conta de Luz" subtitle="06/07/23" amount="R$: 750,00"/>
+                <CardHistoryFinancene tagColor="#B70404" title="Conta de Luz" subtitle="06/07/23" amount="R$: 750,00"/>
+                <CardHistoryFinancene tagColor="#B70404" title="Conta de Luz" subtitle="06/07/23" amount="R$: 750,00"/>
+                <CardHistoryFinancene tagColor="#B70404" title="Conta de Luz" subtitle="06/07/23" amount="R$: 750,00"/>
+                <CardHistoryFinancene tagColor="#B70404" title="Conta de Luz" subtitle="06/07/23" amount="R$: 750,00"/>
+                <CardHistoryFinancene tagColor="#B70404" title="Conta de Luz" subtitle="06/07/23" amount="R$: 750,00"/>
+                <CardHistoryFinancene tagColor="#B70404" title="Conta de Luz" subtitle="06/07/23" amount="R$: 750,00"/>
+                <CardHistoryFinancene tagColor="#B70404" title="Conta de Luz" subtitle="06/07/23" amount="R$: 750,00"/>
+                <CardHistoryFinancene tagColor="#B70404" title="Conta de Luz" subtitle="06/07/23" amount="R$: 750,00"/>
+                <CardHistoryFinancene tagColor="#B70404" title="Conta de Luz" subtitle="06/07/23" amount="R$: 750,00"/>
+                <CardHistoryFinancene tagColor="#B70404" title="Conta de Luz" subtitle="06/07/23" amount="R$: 750,00"/>
+                <CardHistoryFinancene tagColor="#B70404" title="Conta de Luz" subtitle="06/07/23" amount="R$: 750,00"/>
+                <CardHistoryFinancene tagColor="#B70404" title="Conta de Luz" subtitle="06/07/23" amount="R$: 750,00"/>
+                <CardHistoryFinancene tagColor="#B70404" title="Conta de Luz" subtitle="06/07/23" amount="R$: 750,00"/>
+                <CardHistoryFinancene tagColor="#B70404" title="Conta de Luz" subtitle="06/07/23" amount="R$: 750,00"/>
+                <CardHistoryFinancene tagColor="#B70404" title="Conta de Luz" subtitle="06/07/23" amount="R$: 750,00"/>
+                <CardHistoryFinancene tagColor="#B70404" title="Conta de Luz" subtitle="06/07/23" amount="R$: 750,00"/>
+                <CardHistoryFinancene tagColor="#B70404" title="Conta de Luz" subtitle="06/07/23" amount="R$: 750,00"/>
+                <CardHistoryFinancene tagColor="#B70404" title="Conta de Luz" subtitle="06/07/23" amount="R$: 750,00"/>
+                <CardHistoryFinancene tagColor="#B70404" title="Conta de Luz" subtitle="06/07/23" amount="R$: 750,00"/>
+                <CardHistoryFinancene tagColor="#B70404" title="Conta de Luz" subtitle="06/07/23" amount="R$: 750,00"/>
+                <CardHistoryFinancene tagColor="#B70404" title="Conta de Luz" subtitle="06/07/23" amount="R$: 750,00"/>
+                <CardHistoryFinancene tagColor="#B70404" title="Conta de Luz" subtitle="06/07/23" amount="R$: 750,00"/>
+                <CardHistoryFinancene tagColor="#B70404" title="Conta de Luz" subtitle="06/07/23" amount="R$: 750,00"/>
+                <CardHistoryFinancene tagColor="#B70404" title="Conta de Luz" subtitle="06/07/23" amount="R$: 750,00"/>
+                <CardHistoryFinancene tagColor="#B70404" title="Conta de Luz" subtitle="06/07/23" amount="R$: 750,00"/>
+                <CardHistoryFinancene tagColor="#B70404" title="Conta de Luz" subtitle="06/07/23" amount="R$: 750,00"/>
+                <CardHistoryFinancene tagColor="#B70404" title="Conta de Luz" subtitle="06/07/23" amount="R$: 750,00"/>
+                <CardHistoryFinancene tagColor="#B70404" title="Conta de Luz" subtitle="06/07/23" amount="R$: 750,00"/>
                 <CardHistoryFinancene tagColor="#B70404" title="Conta de Luz" subtitle="06/07/23" amount="R$: 750,00"/>
             </Content>
         </StyleConfig>
